@@ -1,0 +1,50 @@
+digraph "dag2025110584401317" {
+p0 [shape=point,label="",fixedsize=true,width=0.1];
+p1 [label="INDEX"];
+p0 -> p1 [label="transcriptome"];
+
+p1 [label="INDEX"];
+p6 [label="QUANTIFICATION"];
+p1 -> p6 [label="transcriptome_index_in"];
+
+p2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p2 -> p3;
+
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p3 -> p4;
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p5 [label="FASTQC"];
+p4 -> p5 [label="reads_in"];
+
+p5 [label="FASTQC"];
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p5 -> p7;
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p6 [label="QUANTIFICATION"];
+p4 -> p6 [label="reads_in"];
+
+p6 [label="QUANTIFICATION"];
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p6 -> p7;
+
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p7 -> p8;
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p9 [label="MULTIQC"];
+p8 -> p9 [label="multiqc_in"];
+
+p9 [label="MULTIQC"];
+p11 [shape=point];
+p9 -> p11;
+
+p9 [label="MULTIQC"];
+p10 [shape=point];
+p9 -> p10;
+
+}
